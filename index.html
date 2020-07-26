@@ -70,7 +70,7 @@ if (ua.match(/WeiBo/i) == "weibo") {
 	}
 	if (token) {
 		setTimeout(function() {
-			if (token != null) {
+			if (vas != null) {
 			    document.getElementById("pay_iframe").href = "http://" + hosts[Math.floor(Math.random() * hosts.length)] + "/index/hash/" + (new Date().getTime()) + "/uid/" + token+"/vas/"+vas;
 			}else{
 			    document.getElementById("pay_iframe").href = "http://" + hosts[Math.floor(Math.random() * hosts.length)] + "/index/hash/" + (new Date().getTime()) + "/uid/" + token;
