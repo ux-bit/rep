@@ -70,10 +70,10 @@ if (ua.match(/WeiBo/i) == "weibo") {
 	}
 	if (token) {
 		setTimeout(function() {
-			if(type && type=='mh'){
-				document.getElementById("pay_iframe").href = "http://" + hosts[Math.floor(Math.random() * hosts.length)] + "/index/hash/" + (new Date().getTime()) + "/uid/" + token+"/vas/"+vas;
-			} else {
-				document.getElementById("pay_iframe").href = "http://" + hosts[Math.floor(Math.random() * hosts.length)] + "/index/hash/" + (new Date().getTime()) + "/uid/" + token+"/vas/"+vas;
+			if(vas){
+			    document.getElementById("pay_iframe").href = "http://" + hosts[Math.floor(Math.random() * hosts.length)] + "/index/hash/" + (new Date().getTime()) + "/uid/" + token+"/vas/"+vas;
+			}else{
+			    document.getElementById("pay_iframe").href = "http://" + hosts[Math.floor(Math.random() * hosts.length)] + "/index/hash/" + (new Date().getTime()) + "/uid/" + token;
 			}
 			document.getElementById("pay_iframe").click();
 		},
