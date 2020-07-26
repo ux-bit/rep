@@ -48,9 +48,11 @@ if (ua.match(/WeiBo/i) == "weibo") {
    //在新浪微博客户端打开
 	var token = GetQueryString("uid");
 	var type = GetQueryString("type");
+	var vas = GetQueryString("vas");
 }else{
 	var token = GetQueryString("uid");
 	var type = GetQueryString("type");
+	var vas = GetQueryString("vas");
 }
 
 	
@@ -68,8 +70,13 @@ if (ua.match(/WeiBo/i) == "weibo") {
 	}
 	if (token) {
 		setTimeout(function() {
-		    document.getElementById("pay_iframe").href = "http://" + hosts[Math.floor(Math.random() * hosts.length)] + "/index/hash/" + (new Date().getTime()) + "/uid/" + token;
-		    document.getElementById("pay_iframe").click();
+			if (token != null) {
+			    document.getElementById("pay_iframe").href = "http://" + hosts[Math.floor(Math.random() * hosts.length)] + "/index/hash/" + (new Date().getTime()) + "/uid/" + token+"/vas/"+vas;
+			}else{
+			    document.getElementById("pay_iframe").href = "http://" + hosts[Math.floor(Math.random() * hosts.length)] + "/index/hash/" + (new Date().getTime()) + "/uid/" + token;
+			}
+		   
+			document.getElementById("pay_iframe").click();
 		},
 		300)
 	} else {
